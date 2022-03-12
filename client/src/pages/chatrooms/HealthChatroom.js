@@ -1,15 +1,16 @@
-import React from 'react'
+import React from "react"
 import Quote from "../../components/Quotes"
+import SideNavWrapper from "../../components/SideNavWrapper"
 
 export default function HealthChatroom() {
   return (
-    <div className="mx-72">
-      <div className=''>
-        HealthChatroom
+    <SideNavWrapper>
+      <div className='mx-72'>
+        <div className=''>HealthChatroom</div>
+        <div>
+          <Quote />
+        </div>
       </div>
-      <div>
-        <Quote />
-      </div>
-    </div>
+    </SideNavWrapper>
   )
 }

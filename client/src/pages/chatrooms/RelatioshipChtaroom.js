@@ -1,15 +1,16 @@
-import React from 'react'
+import React from "react"
 import Quote from "../../components/Quotes"
+import SideNavWrapper from "../../components/SideNavWrapper"
 
 export default function RelationshipChatroom() {
   return (
-    <div className="mx-72">
-      <div className=''>
-        RelationshipChatroom
+    <SideNavWrapper>
+      <div className='mx-72'>
+        <div className=''>RelationshipChatroom</div>
+        <div>
+          <Quote />
+        </div>
       </div>
-      <div>
-        <Quote />
-      </div>
-    </div>
+    </SideNavWrapper>
   )
 }
