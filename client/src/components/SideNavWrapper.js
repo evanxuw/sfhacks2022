@@ -1,11 +1,12 @@
 import React from "react"
 import Sidebar from "./Sidebar"
 import Navbar from "./Navbar"
-const SideNavWrapper = () => {
+const SideNavWrapper = ({ children }) => {
   return (
     <div>
       <Navbar />
       <Sidebar />
+      {children}
     </div>
   )
 }
