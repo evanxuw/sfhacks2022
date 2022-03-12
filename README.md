@@ -32,8 +32,13 @@ We are using Firebase for database and authentication. Cloud Firestore is a flex
 
 We are using AssemblyAI to convert the speech to text. The user can convert his speech to text in the chatroom.
 
+## 🛠 Best Usage of CI/CD sponsored by CircleCI
+
+We are using CircleCI for continuous integration and deployment. CircleCI is a free service that provides continuous integration and deployment for your applications. It’s a great way to test our code, run our tests, and deploy our code.
+
 ## 🔐 Best Use of DeSo
-We are using DeSo for encryption. DeSo is a free, open-source, cross-platform, easy-to-use, secure, and fast cryptography library.
+
+We are using DeSo for encryption. DeSo is a Layer 1 blockchain custom-built for decentralized social media applications.
 
 ## 🧠 Challenges we ran into
 

@@ -8,7 +8,6 @@ export default function WorkChatroom() {
     <SideNavWrapper>
       <div className='mx-72'>
         <Messaging title={"Work Vent Room"} />
-
         <div>
           <Quote />
         </div>

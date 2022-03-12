@@ -7,5 +7,12 @@ import Login from "./pages/Login"
 export default function App() {
   const [user] = useAuthState(auth)
 
-  return <div className='font-montserrat'>{user ? <Main /> : <Login />}</div>
+  return <div className='font-montserrat'>
+    {
+      user ?
+        <Main />
+        :
+        <Login />
+    }
+  </div>
 }

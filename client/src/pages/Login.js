@@ -1,18 +1,18 @@
 import React from "react"
 import firebase from "firebase"
 import { auth } from "../services/firebase"
-
 import LoginForm from "../components/LoginForm"
 import mentalHealth from "../assets/images/mental-health.jpg"
 import logo from "../assets/images/Logo.png"
-function LoginGoogle() {
-  function signInWithGoogle() {
-    const provider = new firebase.auth.GoogleAuthProvider()
-    auth.signInWithPopup(provider)
-  }
 
-  return <div onClick={signInWithGoogle}>Login</div>
-}
+// function LoginGoogle() {
+//   function signInWithGoogle() {
+//     const provider = new firebase.auth.GoogleAuthProvider()
+//     auth.signInWithPopup(provider)
+//   }
+
+//   return <div onClick={signInWithGoogle}>Login</div>
+// }
 
 const Login = () => {
   return (

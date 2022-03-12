@@ -2,6 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import Logo from '../assets/icons/logo.svg'
 import { HiOutlineMenuAlt3, HiX } from "react-icons/hi";
+import { auth } from '../services/firebase';
 
 export default function Navbar() {
 
@@ -45,9 +46,7 @@ export default function Navbar() {
                                             <span className="lg:inline-flex px-3 mx-3 py-2 rounded items-center justify-center  cursor-pointer">Home</span>
                                         </Link>
 
-                                        <Link to="/login">
-                                            <span className="lg:inline-flex px-3 mx-3 py-2 rounded items-center justify-center  cursor-pointer">Log out</span>
-                                        </Link>
+                                        <span className="lg:inline-flex px-3 mx-3 py-2 rounded items-center justify-center  cursor-pointer" onClick={() => auth.signOut()}>Log out</span>
 
                                         <Link to="/profile">
                                             <span className="lg:inline-flex px-3 mx-3 py-2 rounded items-center justify-center  cursor-pointer">Profile</span>
@@ -69,9 +68,7 @@ export default function Navbar() {
                             <span className="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded items-center justify-center  cursor-pointer">Home</span>
                         </Link>
 
-                        <Link to="/login">
-                            <span className="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded items-center justify-center  cursor-pointer">Log out</span>
-                        </Link>
+                        <span className="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded items-center justify-center  cursor-pointer" onClick={() => auth.signOut()}>Log out</span>
 
                         <Link to="/profile">
                             <span className="lg:inline-flex lg:w-auto w-full px-3 py-1 rounded items-center justify-center  cursor-pointer bg-white">Profile</span>
