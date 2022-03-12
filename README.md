@@ -1,6 +1,6 @@
-# VentChat or VentOut
+# VentOut
 
-## Team <Team Name>
+## Team VentOut
 
 ## 💡 Inspiration
 
@@ -10,7 +10,6 @@
 
 - React Js: For fronted
 - Node Js and Express Js: For backend
-- Twilio: For chatroom
 - AssemblyAI: For realtime speech to text conversion
 - GitHub Pages: For deployment
 
@@ -25,15 +24,16 @@
 - We are using GitHub for **Collaboration**. GitHub makes it easy to share code with others and helps a lot in collaboration. GitHub makes it easy to set up a project and get started.
 - We also used GitHub for planning and keeping track of our project and its progress with the help of **GitHub project** management tool.
 
-## ⭕ Most Creative Use of Twilio
+## ⛅ Best Use of Google Cloud
 
-Twilio provides a ton of other awesome communication features using web service APIs. We have used to Twilio to create the chatroom, which provides a great platform for the students to collaborate.
+We are using Firebase for database and authentication. Cloud Firestore is a flexible, scalable real-time, high-performance database for mobile, web, and server development from Firebase and Google Cloud. Firebase is a free service and easy to use
 
 ## 🤖 Best Use of AssemblyAI
 
 We are using AssemblyAI to convert the speech to text. The user can convert his speech to text in the chatroom.
 
 ## 🔐 Best Use of DeSo
+We are using DeSo for encryption. DeSo is a free, open-source, cross-platform, easy-to-use, secure, and fast cryptography library.
 
 ## 🧠 Challenges we ran into
 
@@ -46,7 +46,7 @@ We are using AssemblyAI to convert the speech to text. The user can convert his 
 - Deploying web app on GitHub Pages.
 - Efficient use of GitHub actions.
 
-## 🚀 What's next for VentChat
+## 🚀 What's next for VentOut
 
 - Building a mobile app
 
