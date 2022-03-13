@@ -1,0 +1,32 @@
+{
+  "files": {
+    "main.css": "/sfhacks2022/static/css/main.185632ca.css",
+    "main.js": "/sfhacks2022/static/js/main.f73bd531.js",
+    "static/js/787.c4e7f8f9.chunk.js": "/sfhacks2022/static/js/787.c4e7f8f9.chunk.js",
+    "static/media/login-sign-up-background.png": "/sfhacks2022/static/media/login-sign-up-background.1abcae9c3cd1e40859f1.png",
+    "static/media/explain-text.png": "/sfhacks2022/static/media/explain-text.1cd890e6e163381530f3.png",
+    "static/media/health-side.png": "/sfhacks2022/static/media/health-side.54f34b77b663f5cb10be.png",
+    "static/media/relationship-side.png": "/sfhacks2022/static/media/relationship-side.5310ba93e8fb42aa5d3a.png",
+    "static/media/work-side.png": "/sfhacks2022/static/media/work-side.58e4fcf3cc8b9203b03d.png",
+    "static/media/school-side.png": "/sfhacks2022/static/media/school-side.14d5634fb96e4209f7a9.png",
+    "static/media/quotes3.svg": "/sfhacks2022/static/media/quotes3.3cedfa43ca3e6a13b0b2fe30d0468677.svg",
+    "static/media/quotes1.svg": "/sfhacks2022/static/media/quotes1.6bce100db65fab037e4f11be63533fc7.svg",
+    "static/media/quotes2.svg": "/sfhacks2022/static/media/quotes2.7beac9c88074eb0ac28b882273880a2f.svg",
+    "static/media/quote.svg": "/sfhacks2022/static/media/quote.56a1d7d948e67de9af0ebfa19b7f2bca.svg",
+    "static/media/tertiary-logo.png": "/sfhacks2022/static/media/tertiary-logo.95a3a5414bc6a6f589f4.png",
+    "static/media/google_logo.png": "/sfhacks2022/static/media/google_logo.817fc47ec0a54e16b482.png",
+    "static/media/chatroom.svg": "/sfhacks2022/static/media/chatroom.e0ce9f7c5cd4645fdeaeb899e59368e6.svg",
+    "static/media/relationship.svg": "/sfhacks2022/static/media/relationship.078603d802498dc4b17b360e94af9084.svg",
+    "static/media/health.svg": "/sfhacks2022/static/media/health.bc1f2958c5c8f5d93c14b6357aef4715.svg",
+    "index.html": "/sfhacks2022/index.html",
+    "static/media/work.svg": "/sfhacks2022/static/media/work.36278ad55e4f0156780202e60496427a.svg",
+    "static/media/school.svg": "/sfhacks2022/static/media/school.1e7eee2e66a8bf1ffcd37ce6773b7b0d.svg",
+    "main.185632ca.css.map": "/sfhacks2022/static/css/main.185632ca.css.map",
+    "main.f73bd531.js.map": "/sfhacks2022/static/js/main.f73bd531.js.map",
+    "787.c4e7f8f9.chunk.js.map": "/sfhacks2022/static/js/787.c4e7f8f9.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.185632ca.css",
+    "static/js/main.f73bd531.js"
+  ]
+}
