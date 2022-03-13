@@ -4,13 +4,14 @@ import firebase from "firebase"
 import microphoneButton from "../assets/images/microphone-button.png"
 import sendButton from "../assets/images/send-button.png"
 
-function SendMessage({ scroll, startedRecording, text, setText }) {
+function SendMessage({ scroll, startedRecording, text, setText, messageDbCollection }) {
   const [msg, setMsg] = useState("")
 
   async function sendMessage(e) {
     e.preventDefault()
     const { uid, photoURL } = auth.currentUser
 
+    // await firestore.collection(messageDbCollection).add({
     await firestore.collection("messages").add({
       text: text,
       photoURL,

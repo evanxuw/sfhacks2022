@@ -15,7 +15,7 @@ export default function RelationshipChatroom() {
     >
       <div className='mx-72'>
         <div className=''>
-          <Messaging title={"Relationship Vent Out Room"}></Messaging>
+          <Messaging title={"Relationship Vent Out Room"} />
         </div>
         <div>
           <Quote />

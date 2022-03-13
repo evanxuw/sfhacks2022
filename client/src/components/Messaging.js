@@ -12,7 +12,8 @@ const SpeechRecognition =
   window.SpeechRecognition || window.webkitSpeechRecognition
 const recognition = new SpeechRecognition()
 var current, transcript, upperCase
-const Messaging = ({ title }) => {
+
+const Messaging = ({ title, dbCollection }) => {
   let [audioURL, isRecording, startRecording, stopRecording, audioBlob] =
     useRecorder()
 
@@ -48,12 +49,16 @@ const Messaging = ({ title }) => {
   useEffect(() => {
     firestore
       .collection("messages")
+      // .collection(`{dbCollection}`)
       .orderBy("createdAt")
       .limit(50)
       .onSnapshot((snapshot) => {
         setMessages(snapshot.docs.map((doc) => doc.data()))
       })
   }, [])
+
+  var items = ['Blue-footed Booby', 'Pink Fairy Armadillo', 'Aye-aye', 'Satanic Leaf-tailed Gecko', 'Fried Egg Jellyfish', 'Meaning of Diamonds', 'Extreme Riddle', 'Lumpsucker', 'Axis'];
+  var item = items[Math.floor(Math.random() * items.length)];
 
   return (
     <div className=' w-full h-screen '>
@@ -70,13 +75,16 @@ const Messaging = ({ title }) => {
         >
           {messages.map(({ id, text, uid }) => (
             <div>
+              <div className={`text-md text-gray-800 pt-2 ${uid === auth.currentUser.uid
+                ? "hidden"
+                : "block"
+                }`}>{item}</div>
               <div
                 key={id}
-                className={`flex px-3 py-2 items-center my-2 text-white rounded-t-3xl ${
-                  uid === auth.currentUser.uid
-                    ? "sent rounded-bl-3xl bg-[#58c556] flex-row-reverse float-right"
-                    : "received rounded-br-3xl bg-[#353df0] float-left"
-                }`}
+                className={`flex px-3 py-2 items-center my-1 text-white rounded-t-3xl ${uid === auth.currentUser.uid
+                  ? "sent rounded-bl-3xl bg-[#58c556] flex-row-reverse float-right"
+                  : "received rounded-br-3xl bg-[#353df0] float-left"
+                  }`}
               >
                 <p className='font-medium text-md break-words'>{text}</p>
               </div>
@@ -90,6 +98,7 @@ const Messaging = ({ title }) => {
         text={text}
         startedRecording={startedRecording}
         scroll={scroll}
+      // messageDbCollection={dbCollection}
       />
       <audio src={audioURL} controls />
       <div className='mx-5 py-6'>Transcript: {text}</div>

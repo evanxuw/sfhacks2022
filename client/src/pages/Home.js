@@ -12,7 +12,7 @@ export default function Home() {
             <h1 className='text-3xl md:text-6xl'>Who we are</h1>
             <p className='text-xl md:text-2xl py-4 tracking-wider'>
               {" "}
-              About the web app and its features{" "}
+              We are inspired by President Abraham Lincoln's “hot letters” written during the civil war, ones that he wrote to vent out his frustration with his colleagues and enemies but never posted. Today we have many more sophisticated tools to vent out all our anger and we made a platform to do so in an effective manner. We call this platform VentOut.{" "}
             </p>
 
             <Link to='/work'>
