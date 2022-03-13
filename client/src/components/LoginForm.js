@@ -1,12 +1,22 @@
 import React, { useState } from "react"
 // import axios from "axios"
-import { useNavigate } from "react-router-dom"
+// import { useNavigate } from "react-router-dom"
 // import { toast } from "react-toastify"
+import firebase from "firebase"
+import { auth } from "../services/firebase"
+import GoogleLogo from "../assets/images/google_logo.png"
+
 const LoginForm = () => {
+
+  function signInWithGoogle() {
+    const provider = new firebase.auth.GoogleAuthProvider()
+    auth.signInWithPopup(provider)
+  }
+
   const [password, setPassword] = useState("")
   const [email, setEmail] = useState("")
 
-  let navigate = useNavigate()
+  // let navigate = useNavigate()
 
   //   const handleSubmit = (e) => {
   //     e.preventdefault()
@@ -59,8 +69,8 @@ const LoginForm = () => {
                 </span>
                 <input
                   type='text'
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
+                  // value={email}
+                  // onChange={(e) => setEmail(e.target.value)}
                   id='sign-in-email'
                   className=' rounded-r-lg flex-1 appearance-none border border-gray-300 w-full py-2 px-4 bg-white text-gray-700 placeholder-gray-400 shadow-sm text-base focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent'
                   placeholder='Your email'
@@ -82,8 +92,8 @@ const LoginForm = () => {
                 </span>
                 <input
                   type='password'
-                  value={password}
-                  onChange={(e) => setPassword(e.target.value)}
+                  // value={password}
+                  // onChange={(e) => setPassword(e.target.value)}
                   id='sign-in-email'
                   className=' rounded-r-lg flex-1 appearance-none border border-gray-300 w-full py-2 px-4 bg-white text-gray-700 placeholder-gray-400 shadow-sm text-base focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent'
                   placeholder='Your password'
@@ -93,7 +103,7 @@ const LoginForm = () => {
             <div className='flex items-center mb-6 -mt-4'></div>
             <div className='flex w-full'>
               <button
-                type='submit'
+                // type='submit'
                 className='py-2 px-4  bg-purple-600 hover:bg-purple-700 focus:ring-purple-500 focus:ring-offset-purple-200 text-white w-full transition ease-in duration-200 text-center text-base font-semibold shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2  rounded-lg '
               >
                 Login
@@ -108,6 +118,14 @@ const LoginForm = () => {
             </span>
           </a>
         </div>
+
+        <div className="w-full block bg-white hover:bg-gray-100 focus:bg-gray-100 text-gray-900 font-semibold rounded-lg px-4 py-3 border border-gray-300 cursor-pointer shadow-lg my-3">
+          <div className="flex items-center justify-center bg-white" onClick={signInWithGoogle}>
+            <img src={GoogleLogo} alt="google" className="bg-white w-4" />
+            <span className="bg-white ml-4">Sign in with Google</span>
+          </div>
+        </div>
+
       </div>
     </div>
   )

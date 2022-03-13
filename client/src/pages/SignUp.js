@@ -1,7 +1,8 @@
 import React from "react"
 import SignUpForm from "../components/SignUpForm"
-import mentalHealth from "../assets/images/mental-health.jpg"
-import logo from "../assets/images/Logo.png"
+import background from "../assets/images/login-sign-up-background.png"
+import logo from "../assets/images/primary-logo.png"
+
 const SignUp = () => {
   return (
     <div className='h-screen'>
@@ -14,17 +15,17 @@ const SignUp = () => {
           }}
           className='flex justify-center items-center align-center flex-wrap w-full'
         >
-          <div className='flex-col w-full md:w-1/2'>
-            <div className='flex'>
-              <img className='m-auto mb-4 h-68 w-68' src={logo} />
-            </div>
-            <SignUpForm />
-          </div>
           <div className='flex flex-col w-full md:w-1/2'>
             <img
               className='hidden object-cover w-full h-screen md:block'
-              src={mentalHealth}
+              src={background}
             />
+          </div>
+          <div className='flex-col w-full md:w-1/2'>
+            <div className='flex'>
+              <img className='m-auto mb-4 h-80 w-80' src={logo} />
+            </div>
+            <SignUpForm />
           </div>
         </div>
       </div>
