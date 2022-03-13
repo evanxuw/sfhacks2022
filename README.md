@@ -17,13 +17,13 @@ When an individual is stressed, they often look for an outlet to release their t
 ---
 
 ## 🦾 How we built it
-* __Frontend:__ React.js, Firebase, Tailwind
-* __Backend:__ Node, Express
+* __Frontend:__ React.js, Tailwind
+* __Backend:__ Node, Express, Circle CI, AssemblyAI, Firebase
 * __Deployment:__ Github Pages
 * __Tools:__ Git
 
 
-![How we built updated](https://user-images.githubusercontent.com/85804252/158037656-6a54885c-dafe-48a1-a387-b6b70acbe28b.png)
+![How we built (1)](https://user-images.githubusercontent.com/85804252/158071482-ffe89529-bae8-4bdc-9d95-dbee0d218b54.png)
 
 ---
 
@@ -38,6 +38,8 @@ We began this hackathon with a singular aim: make an interface that allows users
 
 
 ## 🎨Best UI/UX
+
+Our [Figma file](https://www.figma.com/file/vVXuAnUqqkYqYH49T2ojKW/SF-HACKATHON?node-id=6%3A25) consists of Wireframes, Mockups, and Design Documents we used to build our application.
 
 We were heavily inspired by the revised version of **Iterative** design process, which not only includes visual design, but a full-fledged research cycle in which you must discover and define your problem before tackling your solution & then finally deploy it.
 
@@ -66,10 +68,13 @@ Research is the key to empathizing with users: we found our specific user group 
 
 ## 🤝 Most Creative Use of GitHub
 
-> GitHub makes it easy to implement the **CI/CD workflow** and makes the deployment process easy.
-> **Deploying** the project on GitHub helped us to get the project deployed on the network to be accessed by other people.
-> We are using GitHub for **Collaboration**. GitHub makes it easy to share code with others and helps a lot in collaboration. GitHub makes it easy to set up a project and get started.
-> We also used GitHub for planning and keeping track of our project and its progress with the help of **GitHub project** management tool.
+- GitHub makes it easy to implement the **CI/CD workflow** and makes the deployment process easy.
+- **Deploying** the project on GitHub helped us to get the project deployed on the network to be accessed by other people.
+- Using **Issues** and **Pull Requests** to communicate with the team helped us to get the project done.
+- We are using GitHub for **Collaboration**. GitHub makes it easy to share code with others and helps a lot in collaboration. GitHub makes it easy to set up a project and get started.
+- We also used GitHub for planning and keeping track of our project and its progress with the help of **GitHub project** management tool.
+
+![full](https://user-images.githubusercontent.com/64153988/158069806-539b28b9-ca65-410f-887c-e0a67bd67da9.png)
 
 ---
 
@@ -81,7 +86,7 @@ Our application uses Firebase for the database to store chats and to authenticat
 
 ## 🤖 Best Use of AssemblyAI
 
-We are using AssemblyAI to convert the speech to text. The user can convert his speech to text in the chatroom. We use the /transcript endpoint to make a call to the API using the audio user generates and send the transcript back to the frontend of the application. We also use the profanity check API to remove curse words from being displayed on our application.
+We are using AssemblyAI's APIs to convert the speech to text. The user can convert his speech to text in the chatroom. We use the /transcript endpoint to make a call to the API using the audio user generates and send the transcript back to the frontend of the application. We also use the profanity check API to remove curse words from being displayed on our application. Although we implemented the functionality to use AssemblyAI in the backend, we didn't use it in the frontend because we needed an immediate response which was not possible through the API.
 
 ---
 
@@ -93,7 +98,7 @@ We are using CircleCI for continuous integration and deployment. CircleCI is a f
 
 ## 🌐 Best Domain Name from Domain.com
 
-- Register a .tech domain name using Domain.com
+- ventout.tech
 
 ---
 
