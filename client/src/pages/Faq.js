@@ -19,7 +19,7 @@ const Faq = () => {
           </div>
         </div>
         <div className=' w-3/5 h-screen '>
-          <div className='pr-5 mb-10'>
+          <div className='pr-4 mb-10'>
             <img src={explainText}></img>
           </div>
         </div>
