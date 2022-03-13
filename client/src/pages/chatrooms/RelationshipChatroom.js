@@ -2,7 +2,7 @@ import React from "react"
 import Quote from "../../components/Quotes"
 import SideNavWrapper from "../../components/SideNavWrapper"
 import relationshipSide from "../../assets/images/relationship-side.png"
-import Messaging from "../../components/Messaging"
+import Messaging from "./relationshipChat/Messaging"
 
 export default function RelationshipChatroom() {
   return (

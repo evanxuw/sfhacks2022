@@ -2,7 +2,7 @@ import React from "react"
 import Quote from "../../components/Quotes"
 import SideNavWrapper from "../../components/SideNavWrapper"
 import schoolSide from "../../assets/images/school-side.png"
-import Messaging from "../../components/Messaging"
+import Messaging from "./schoolChat/Messaging"
 
 export default function SchoolChatroom() {
   return (
