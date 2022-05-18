@@ -1,8 +1,8 @@
 import React, { useState } from "react"
-import { firestore, auth } from "../services/firebase"
+import { firestore, auth } from "../../../services/firebase"
 import firebase from "firebase"
-import microphoneButton from "../assets/images/microphone-button.png"
-import sendButton from "../assets/images/send-button.png"
+import microphoneButton from "../../../assets/images/microphone-button.png"
+import sendButton from "../../../assets/images/send-button.png"
 
 function SendMessage({
   scroll,
@@ -12,6 +12,7 @@ function SendMessage({
   messageDbCollection,
   setStartedRecording,
   startRecord,
+  isRecording,
 }) {
   const [msg, setMsg] = useState("")
 
@@ -20,7 +21,7 @@ function SendMessage({
     const { uid, photoURL } = auth.currentUser
 
     // await firestore.collection(messageDbCollection).add({
-    await firestore.collection("messages").add({
+    await firestore.collection("workMessages").add({
       text: text,
       photoURL,
       uid,
@@ -31,7 +32,7 @@ function SendMessage({
     scroll.current.scrollIntoView({ behavior: "smooth" })
   }
   return (
-    <form onSubmit={sendMessage} className='py-5 flex flex-row px-5 '>
+    <form onSubmit={sendMessage} className='flex flex-row px-5 py-5 '>
       <button
         onClick={(e) => {
           setStartedRecording(true)
@@ -42,11 +43,12 @@ function SendMessage({
         <img className='cursor-pointer' src={microphoneButton} />
       </button>
       <input
-        className='px-3  border-2 border-primary  w-full rounded-xl'
+        readOnly
+        className='w-full px-3 border-2 border-primary rounded-xl'
         placeholder={
           startedRecording
-            ? "Press the microphone to stop recording once you're done"
-            : "Press the microphone vent out"
+            ? "Press the microphone to stop recording. Once you're done and press the SEND button"
+            : "Press the microphone and anonymously Vent Out"
         }
         value={text}
         onChange={(e) => setMsg(e.target.value)}

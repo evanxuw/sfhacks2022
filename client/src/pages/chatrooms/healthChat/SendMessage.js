@@ -31,7 +31,7 @@ function SendMessage({
     scroll.current.scrollIntoView({ behavior: "smooth" })
   }
   return (
-    <form onSubmit={sendMessage} className='py-5 flex flex-row px-5 '>
+    <form onSubmit={sendMessage} className='flex flex-row px-5 py-5 '>
       <button
         onClick={(e) => {
           setStartedRecording(true)
@@ -42,11 +42,12 @@ function SendMessage({
         <img className='cursor-pointer' src={microphoneButton} />
       </button>
       <input
-        className='px-3  border-2 border-primary  w-full rounded-xl'
+        readOnly
+        className='w-full px-3 border-2 border-primary rounded-xl'
         placeholder={
           startedRecording
-            ? "Press the microphone to stop recording once you're done"
-            : "Press the microphone vent out"
+            ? "Press the microphone to stop recording. Once you're done and press the SEND button"
+            : "Press the microphone and anonymously Vent Out"
         }
         value={text}
         onChange={(e) => setMsg(e.target.value)}

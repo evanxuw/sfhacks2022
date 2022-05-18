@@ -1,5 +1,5 @@
 import React from "react"
-import Messaging from "../../components/Messaging"
+import Messaging from "./workChat/Messaging"
 import Quote from "../../components/Quotes"
 import SideNavWrapper from "../../components/SideNavWrapper"
 import workSide from "../../assets/images/work-side.png"
