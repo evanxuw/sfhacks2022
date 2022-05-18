@@ -1,7 +1,7 @@
 ## 💡Inspiration 
 Life can get hard sometimes. Whether in school, work, relationships, or physical health, we all face challenges that make us angry and disappointed. People often remove this frustration by cursing out loud and in the process hurt somebody else or by punching a wall, hurting themselves. Studies show that such actions, known as venting out, positively impact your mental health but negatively impact those around you. Venting out is good for you but venting out in the correct manner is even more important.
 
-We are inspired by President Abraham Lincoln’s “hot letters” written during the civil war, ones that he wrote to vent out his frustration with his colleagues and enemies but never posted. Today we have many more sophisticated tools to vent out all our anger and we made a platform to do so in an effective manner. We call this platform VentOut
+We are inspired by President Abraham Lincoln’s “hot letters” written during the civil war, ones that he wrote to vent out his frustration with his colleagues and enemies but never posted. Today we have many more sophisticated tools to vent out all our anger and we made a platform to do so in an effective manner. We call this platform *VentOUT*
 
 ![3](https://user-images.githubusercontent.com/85804252/158043719-2a287e41-7f87-4110-8868-cfd9866d9f91.png)
 
