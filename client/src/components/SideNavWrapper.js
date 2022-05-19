@@ -10,6 +10,8 @@ const SideNavWrapper = ({
   sideLink,
 }) => {
   return (
+    // navbar is the top bar
+    // sidebar is the lhs chat rooms bar
     <div>
       <Navbar />
       <Sidebar

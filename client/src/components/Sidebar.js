@@ -5,9 +5,11 @@ import HealthLogo from "../assets/icons/health.svg"
 import SchoolLogo from "../assets/icons/school.svg"
 import RelationshipLogo from "../assets/icons/relationship.svg"
 import SidebarImg from "../assets/images/sidebarImg.png"
+import workImg from "../assets/images/work-side.png"
 
 export default function Sidebar({
-  sideImg = SidebarImg,
+  // default values for sidebar
+  sideImg = workImg,
   sideTitle = "Works gotten you worked up?",
   sideText = "Find out how we deal with the daily stresses of our life",
   sideLink = "/something",
@@ -21,10 +23,10 @@ export default function Sidebar({
       {" "}
       <ul className='relative p-4'>
         <li className='relative'>
-          <div className='bg-white border-2 border-primary text-secondary uppercase text-2xl grid place-items-center rounded-lg py-1'>
+          <div className='grid py-1 text-2xl uppercase bg-white border-2 rounded-lg border-primary text-secondary place-items-center'>
             Categories
           </div>
-          <div className='grid grid-cols-2 gap-2 py-2 px-1'>
+          <div className='grid grid-cols-2 gap-2 px-1 py-2'>
             <Link to='/work'>
               <div
                 className={`border-2 border-primary bg-${
@@ -69,7 +71,7 @@ export default function Sidebar({
         </li>
         <li className='relative'>
           <div className='pt-5'>
-            <div className='bg-white  border-2 border-primary text-secondary uppercase text-2xl grid place-items-center rounded-lg py-1'>
+            <div className='grid py-1 text-2xl uppercase bg-white border-2 rounded-lg border-primary text-secondary place-items-center'>
               Resources
             </div>
             <div className='py-2'>

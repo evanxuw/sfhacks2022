@@ -12,18 +12,21 @@ export default function Quotes() {
   const [loadingQuote, setLoadingQuote] = useState("")
   const [quoteCopied, setQuoteCopied] = useState(false)
 
-  var items = [QuoteImg1, QuoteImg2, QuoteImg3];
-var item = items[Math.floor(Math.random() * items.length)];
+  var items = [QuoteImg1, QuoteImg2, QuoteImg3]
+  var item = items[Math.floor(Math.random() * items.length)]
 
+  // componentDidMount call to get random quote
   useEffect(() => {
     fetchRandomQuote()
   }, [])
 
   async function fetchRandomQuote() {
     try {
+      // async request to get random quote
       setLoadingQuote(true)
       setErrorMessage("")
       setQuoteCopied(false)
+      // quotable API call
       const quoteObject = await axios.get("https://api.quotable.io/random")
       setQuote(quoteObject.data)
       setLoadingQuote(false)
@@ -37,13 +40,10 @@ var item = items[Math.floor(Math.random() * items.length)];
     <div className='w-72 h-full shadow-md bg-[#F6F6F6] px-1 absolute right-0 top-[103px]'>
       <div className='relative'>
         <img src={item} alt='img' className='py-8' />
-        <div className='px-2 grid place-items-center '>
-          <p className='italic text-xl text-center'>"{quote.content}"</p>
-          <p className='text-right text-xl'>- {quote.author}</p>
-          <div
-            className='cursor-pointer pl-4'
-            onClick={fetchRandomQuote}
-          >
+        <div className='grid px-2 place-items-center '>
+          <p className='text-xl italic text-center'>"{quote.content}"</p>
+          <p className='text-xl text-right'>- {quote.author}</p>
+          <div className='pl-4 cursor-pointer' onClick={fetchRandomQuote}>
             <div className='pt-4'>
               {" "}
               <IoReload className='w-6 h-6 font-bold' />

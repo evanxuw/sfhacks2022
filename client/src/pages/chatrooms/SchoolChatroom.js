@@ -6,6 +6,7 @@ import Messaging from "./schoolChat/Messaging"
 
 export default function SchoolChatroom() {
   return (
+    // set the props for side navbar
     <SideNavWrapper
       currentTab='School'
       sideImg={schoolSide}

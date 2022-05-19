@@ -1,29 +1,35 @@
 import React, { useState, useRef, useEffect } from "react"
-import microphoneButton from "../../../assets/images/microphone-button.png"
-import sendButton from "../../../assets/images/send-button.png"
 import useRecorder from "../../../hooks/useRecorder"
 import axios from "axios"
 
 import { firestore, auth } from "../../../services/firebase"
 import SendMessage from "./SendMessage"
-// import microphoneButton from "../assets/images/microphone-button.png"
-// import sendButton from "../assets/images/send-button.png"
+
+// Speech recognition WebSpeech API: https://developer.mozilla.org/en-US/docs/Web/API/SpeechRecognition
 const SpeechRecognition =
   window.SpeechRecognition || window.webkitSpeechRecognition
+
+// instantiate SpeechRecognition object
 const recognition = new SpeechRecognition()
 var current, transcript, upperCase
 
 const Messaging = ({ title, dbCollection }) => {
+  // initialize useRecorder hook
   let [audioURL, isRecording, startRecording, stopRecording, audioBlob] =
     useRecorder()
 
   const [startedRecording, setStartedRecording] = useState(false)
   const [text, setText] = useState()
   const startRecord = (e) => {
+    // capture the event
     recognition.start(e)
+
     recognition.onresult = (e) => {
+      // after the event has been processed by the browser, get the index
       current = e.resultIndex
+      // get the transcript from the processed event
       transcript = e.results[current][0].transcript
+      // the transcript is in lower case so set firse char to upper case
       upperCase = transcript.charAt(0).toUpperCase() + transcript.substring(1)
       console.log("voice event", e)
       console.log("transcript", transcript)
@@ -46,18 +52,20 @@ const Messaging = ({ title, dbCollection }) => {
   const scroll = useRef()
   const [messages, setMessages] = useState([])
 
+  // load messages from schoolMessages collection
   useEffect(() => {
     firestore
       .collection("schoolMessages")
       // .collection(`{dbCollection}`)
       .orderBy("createdAt")
       .limit(50)
+      // onSnapshot() method you constantly listen to a document https://stackoverflow.com/questions/54479892/difference-between-get-and-onsnapshot-in-cloud-firestore
       .onSnapshot((snapshot) => {
         setMessages(snapshot.docs.map((doc) => doc.data()))
       })
   }, [])
 
-  var items = [
+  var randomUsernames = [
     "Blue-footed Booby",
     "Pink Fairy Armadillo",
     "Aye-aye",
@@ -68,12 +76,12 @@ const Messaging = ({ title, dbCollection }) => {
     "Lumpsucker",
     "Axis",
   ]
-  var item = items[Math.floor(Math.random() * items.length)]
+  var item = randomUsernames[Math.floor(Math.random() * randomUsernames.length)]
 
   return (
-    <div className=' w-full h-screen '>
+    <div className='w-full h-screen '>
       <div className='pt-4'>
-        <div className='bg-white px-4 text-primary uppercase text-4xl grid place-items-left rounded-lg py-1'>
+        <div className='grid px-4 py-1 text-4xl uppercase bg-white rounded-lg text-primary place-items-left'>
           {title}
         </div>
       </div>
@@ -81,7 +89,7 @@ const Messaging = ({ title, dbCollection }) => {
       <div className='px-5 py-6 '>
         <div
           style={{ height: "65vh" }}
-          className='rounded-lg bg-slate-200 p-4 overflow-y-scroll flex flex-col h-128 w-full'
+          className='flex flex-col w-full p-4 overflow-y-scroll rounded-lg bg-slate-200 h-128'
         >
           {messages.map(({ id, text, uid }) => (
             <div>
@@ -100,7 +108,7 @@ const Messaging = ({ title, dbCollection }) => {
                     : "received rounded-br-3xl bg-[#353df0] float-left"
                 }`}
               >
-                <p className='font-medium text-md break-words'>{text}</p>
+                <p className='font-medium break-words text-md'>{text}</p>
               </div>
             </div>
           ))}
@@ -114,11 +122,13 @@ const Messaging = ({ title, dbCollection }) => {
         scroll={scroll}
         setStartedRecording={setStartedRecording}
         startRecord={startRecord}
+        stopRecording={stopRecording}
+        isRecording={isRecording}
         // messageDbCollection={dbCollection}
       />
       {/* <audio src={audioURL} controls />
-      <div className='mx-5 py-6'>Transcript: {text}</div>
-      <div className='py-5 flex flex-row px-5 '>
+      <div className='py-6 mx-5'>Transcript: {text}</div>
+      <div className='flex flex-row px-5 py-5 '>
         <button
           onClick={(e) => {
             setStartedRecording(true)
@@ -140,7 +150,7 @@ const Messaging = ({ title, dbCollection }) => {
               ? "Press the microphone to stop recording once you're done"
               : "Press the microphone vent out"
           }
-          className='px-3  border-2 border-primary  w-full rounded-xl'
+          className='w-full px-3 border-2 border-primary rounded-xl'
         ></input>
         <button>
           <img className='cursor-pointer' src={sendButton} />
