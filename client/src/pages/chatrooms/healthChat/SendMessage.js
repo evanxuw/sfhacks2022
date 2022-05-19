@@ -13,21 +13,28 @@ function SendMessage({
   setStartedRecording,
   startRecord,
 }) {
+  // set msg to empty string
   const [msg, setMsg] = useState("")
 
   async function sendMessage(e) {
     e.preventDefault()
+    // get user information from authState
     const { uid, photoURL } = auth.currentUser
-
-    // await firestore.collection(messageDbCollection).add({
+    if (text === "") {
+      return
+    }
+    // async call to update firestore with new message
     await firestore.collection("healthMessages").add({
       text: text,
       photoURL,
       uid,
       createdAt: firebase.firestore.FieldValue.serverTimestamp(),
     })
+    // reset the values
     setMsg("")
     setText("")
+    setStartedRecording(false)
+
     scroll.current.scrollIntoView({ behavior: "smooth" })
   }
   return (
@@ -46,7 +53,7 @@ function SendMessage({
         className='w-full px-3 border-2 border-primary rounded-xl'
         placeholder={
           startedRecording
-            ? "Press the microphone to stop recording. Once you're done and press the SEND button"
+            ? "Once you're done venting out, press the SEND button"
             : "Press the microphone and anonymously Vent Out"
         }
         value={text}

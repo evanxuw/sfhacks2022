@@ -12,16 +12,22 @@ const recognition = new SpeechRecognition()
 var current, transcript, upperCase
 
 const Messaging = ({ title, dbCollection }) => {
+  // initialize useRecorder hook
   let [audioURL, isRecording, startRecording, stopRecording, audioBlob] =
     useRecorder()
 
   const [startedRecording, setStartedRecording] = useState(false)
   const [text, setText] = useState()
   const startRecord = (e) => {
+    // capture the event
     recognition.start(e)
+
     recognition.onresult = (e) => {
+      // after the event has been processed by the browser, get the index
       current = e.resultIndex
+      // get the transcript from the processed event
       transcript = e.results[current][0].transcript
+      // the transcript is in lower case so set firse char to upper case
       upperCase = transcript.charAt(0).toUpperCase() + transcript.substring(1)
       console.log("voice event", e)
       console.log("transcript", transcript)
@@ -39,24 +45,25 @@ const Messaging = ({ title, dbCollection }) => {
       "http://localhost:5000/transcribe",
       formatData
     )
-    console.log(data)
   }
 
   const scroll = useRef()
   const [messages, setMessages] = useState([])
 
+  // load messages from workMessages collection
   useEffect(() => {
     firestore
       .collection("workMessages")
       // .collection(`{dbCollection}`)
       .orderBy("createdAt")
       .limit(50)
+      // onSnapshot() method you constantly listen to a document https://stackoverflow.com/questions/54479892/difference-between-get-and-onsnapshot-in-cloud-firestore
       .onSnapshot((snapshot) => {
         setMessages(snapshot.docs.map((doc) => doc.data()))
       })
   }, [])
 
-  var items = [
+  var randomUsernames = [
     "Blue-footed Booby",
     "Pink Fairy Armadillo",
     "Aye-aye",
@@ -67,7 +74,7 @@ const Messaging = ({ title, dbCollection }) => {
     "Lumpsucker",
     "Axis",
   ]
-  var item = items[Math.floor(Math.random() * items.length)]
+  var item = randomUsernames[Math.floor(Math.random() * randomUsernames.length)]
 
   return (
     <div className='w-full h-screen '>
