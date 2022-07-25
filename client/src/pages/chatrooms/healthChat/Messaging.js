@@ -3,13 +3,14 @@ import microphoneButton from "../../../assets/images/microphone-button.png"
 import sendButton from "../../../assets/images/send-button.png"
 import useRecorder from "../../../hooks/useRecorder"
 import axios from "axios"
-
 import { firestore, auth } from "../../../services/firebase"
 import SendMessage from "./SendMessage"
-// import microphoneButton from "../assets/images/microphone-button.png"
-// import sendButton from "../assets/images/send-button.png"
+
+// speech recognition web api https://developer.mozilla.org/en-US/docs/Web/API/SpeechRecognition
 const SpeechRecognition =
   window.SpeechRecognition || window.webkitSpeechRecognition
+
+// instantiate speech recognition object
 const recognition = new SpeechRecognition()
 var current, transcript, upperCase
 
@@ -17,9 +18,22 @@ const Messaging = ({ title, dbCollection }) => {
   // initialize useRecorder hook
   let [audioURL, isRecording, startRecording, stopRecording, audioBlob] =
     useRecorder()
-
   const [startedRecording, setStartedRecording] = useState(false)
   const [text, setText] = useState()
+
+  const handleSendClick = async () => {
+    console.log(audioBlob)
+
+    let formatData = new FormData()
+    formatData.append("file", audioBlob)
+
+    const { data } = await axios.post(
+      "http://localhost:5000/transcribe",
+      formatData
+    )
+  }
+
+  // recording event handler
   const startRecord = (e) => {
     // capture the event
     recognition.start(e)
@@ -35,18 +49,6 @@ const Messaging = ({ title, dbCollection }) => {
       console.log("transcript", transcript)
       setText(transcript)
     }
-  }
-
-  const handleSendClick = async () => {
-    console.log(audioBlob)
-
-    let formatData = new FormData()
-    formatData.append("file", audioBlob)
-
-    const { data } = await axios.post(
-      "http://localhost:5000/transcribe",
-      formatData
-    )
   }
 
   const scroll = useRef()

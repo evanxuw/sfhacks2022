@@ -4,8 +4,8 @@ import axios from "axios"
 
 import { firestore, auth } from "../../../services/firebase"
 import SendMessage from "./SendMessage"
-// import microphoneButton from "../assets/images/microphone-button.png"
-// import sendButton from "../assets/images/send-button.png"
+
+// speech recognition web api https://developer.mozilla.org/en-US/docs/Web/API/SpeechRecognition
 const SpeechRecognition =
   window.SpeechRecognition || window.webkitSpeechRecognition
 const recognition = new SpeechRecognition()
