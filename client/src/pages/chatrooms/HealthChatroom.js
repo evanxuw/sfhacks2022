@@ -15,7 +15,7 @@ export default function HealthChatroom() {
     >
       <div className='mx-72'>
         <div className=''>
-          <Messaging title={"Health Vent Out Room"} dbCollection={"workMmessages"} />
+          <Messaging title={"Health Vent Out Room"} />
         </div>
         <div>
           <Quote />
